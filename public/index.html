@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tre proposte interattive per Osteria Papilla, Tesserete.">
+<title>Papilla Tesserete · Tre proposte interattive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-concept="tropico">
+<a class="skip" href="#esperienza">Salta al contenuto</a>
+<svg xmlns="http://www.w3.org/2000/svg" class="symbols" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="burst" viewBox="0 0 48 48"><path d="M24 0 27.7 17.1 41 7 30.9 20.3 48 24 30.9 27.7 41 41 27.7 30.9 24 48 20.3 30.9 7 41 17.1 27.7 0 24 17.1 20.3 7 7 20.3 17.1Z" fill="currentColor"/></symbol>
+</svg>
+<header class="mast shell" id="top">
+  <a class="brand" href="#top" aria-label="Papilla Tesserete, inizio"><span>PAPILLA<span class="brand-dot">.</span></span><small>OSTERIA LATINA<br>TESSERETE · CH</small></a>
+  <nav class="links" aria-label="Navigazione"><a href="#esperienza">L’esperienza</a><a href="#recensioni">Recensioni</a></nav>
+  <a class="mast-cta" href="tel:+41799220625">Chiama <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+</header>
+<div class="chooser shell">
+  <span class="chooser-label"><span></span> MOCK INTERATTIVO <b> / </b> 3 CONCEPT</span>
+  <div class="concepts" role="group" aria-label="Scegli una direzione visiva">
+    <button type="button" data-pick="tropico" aria-pressed="true"><small>01</small> Trópico</button>
+    <button type="button" data-pick="fuego" aria-pressed="false"><small>02</small> Fuego</button>
+    <button type="button" data-pick="noche" aria-pressed="false"><small>03</small> Noche Latina</button>
+  </div>
+  <span class="chooser-count" id="count" aria-hidden="true">01 / 03</span>
+</div>
+<main>
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="stage" id="stage">
+      <div class="hero-media">
+        <img class="hero-img" src="assets/tropico.webp" alt="Cocktail al lime, immagine dimostrativa" width="1100" height="1300" fetchpriority="high">
+        <div class="media-shade"></div>
+        <svg class="media-grid" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="2" y="2" width="96" height="96" fill="none" stroke="currentColor" stroke-width=".12"/><path d="M2 9V2h7m82 0h7v7m0 82v7h-7m-82 0H2v-7" stroke="currentColor" fill="none" stroke-width=".4"/></svg>
+        <div class="embers" aria-hidden="true"></div>
+        <span class="media-caption">FIG. 01 &nbsp; / &nbsp; DAL BANCONE</span>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow hero-kicker"><svg class="icon" aria-hidden="true"><use href="#burst"/></svg><span>OSTERIA LATINA · TESSERETE</span></p>
+        <h1 id="hero-title"><span>Ritmo</span><em>tropicale.</em></h1>
+        <p class="hero-description">Cocktail tropicali, verde neon e una tavola che mette insieme Brasile, Argentina, Perù e Messico.</p>
+        <a class="button hero-button" href="#esperienza"><span>Esplora il bancone</span><svg class="icon" aria-hidden="true"><use href="#down"/></svg></a>
+      </div>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="stamp-path" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs><circle cx="60" cy="60" r="58" fill="currentColor"/><text textLength="258"><textPath href="#stamp-path">PAPILLA ✦ TESSERETE ✦ PAPILLA ✦ TESSERETE ✦ </textPath></text><use href="#burst" x="44" y="44" width="32" height="32" class="seal-star"/></svg>
+      </div>
+      <div class="stage-foot"><span id="hero-note">01 — TRÓPICO</span><span>IMMAGINE DIMOSTRATIVA</span></div>
+    </div>
+  </section>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track"><div id="ticker-a">SAPORI LATINI &nbsp;✦&nbsp; COCKTAIL TROPICALI &nbsp;✦&nbsp; TESSERETE &nbsp;✦&nbsp; </div><div id="ticker-b">SAPORI LATINI &nbsp;✦&nbsp; COCKTAIL TROPICALI &nbsp;✦&nbsp; TESSERETE &nbsp;✦&nbsp; </div></div>
+  </div>
+  <section class="experience shell" id="esperienza" aria-labelledby="experience-title">
+    <div class="experience-copy">
+      <p class="eyebrow"><span class="dot"></span> <span id="experience-kicker">01 / INTERAZIONE · AL BANCONE</span></p>
+      <h2 id="experience-title">Un altro<br>giro<span>.</span></h2>
+      <p id="experience-intro">Dal primo cocktail al brindisi. Tocca i tre momenti e passa dalle immagini del profilo alla scena illustrata.</p>
+      <div class="steps" role="group" aria-label="Controlla la scena">
+        <button type="button" data-step="0" aria-pressed="true">Il cocktail</button>
+        <button type="button" data-step="1" aria-pressed="false">Il lime</button>
+        <button type="button" data-step="2" aria-pressed="false">Il brindisi</button>
+      </div>
+      <div class="step-info" id="step-info" aria-live="polite"><strong id="step-title">Giallo tropicale</strong><p id="step-description">I cocktail gialli serviti al bancone di Papilla.</p></div>
+    </div>
+    <figure class="scene" id="scene" data-level="0">
+      <img id="scene-image" src="assets/drinks.webp" alt="Cocktail sul bancone di Papilla" width="1100" height="1300">
+      <div class="scene-wash"></div>
+      <div class="scene-lines"></div>
+      <div class="scene-sparks" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="scene-meter" aria-hidden="true"><span></span><span></span><span></span></div>
+      <figcaption><span id="scene-caption">IL COCKTAIL</span><span id="scene-index" hidden>SCENA ILLUSTRATIVA</span><a id="scene-source" href="https://www.instagram.com/papillatesserete/" target="_blank" rel="noopener">Dal profilo Papilla ↗</a></figcaption>
+    </figure>
+  </section>
+  <section class="reviews" id="recensioni" aria-labelledby="reviews-title">
+    <div class="shell reviews-inner">
+      <div class="reviews-head">
+        <div><p class="eyebrow"><span class="dot"></span> DALLE VOSTRE TAVOLE</p><h2 id="reviews-title">La voce <em>degli ospiti.</em></h2></div>
+        <a class="button maps-button" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria%20Papilla%20Piazza%20Giuseppe%20Lepori%201%20Tesserete" target="_blank" rel="noopener">Recensioni su Maps <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="review-tools">
+        <div class="review-filters" role="group" aria-label="Filtra le recensioni">
+          <button type="button" data-review="all" aria-pressed="true">Tutte</button>
+          <button type="button" data-review="cucina" aria-pressed="false">Cucina</button>
+          <button type="button" data-review="servizio" aria-pressed="false">Servizio</button>
+          <button type="button" data-review="atmosfera" aria-pressed="false">Atmosfera</button>
+        </div>
+        <span class="review-status" id="review-status" aria-live="polite">3 estratti</span>
+      </div>
+      <div class="review-grid">
+        <article class="review" data-tags="cucina">
+          <div class="review-top"><span class="stars" aria-label="5 stelle su 5">★★★★★</span><span>CUCINA</span></div>
+          <blockquote>«Deliziosi burritos, ancora più ceviche»</blockquote>
+          <div class="review-by"><span>Nico Agustoni</span><a href="https://corestaurant.ch/it/Switzerland/restaurant/papilla-the-celebration-of-latin-flavour-tesserete-11357" target="_blank" rel="noopener">CoRestaurant ↗</a></div>
+        </article>
+        <article class="review" data-tags="servizio">
+          <div class="review-top"><span class="stars" aria-label="5 stelle su 5">★★★★★</span><span>SERVIZIO</span></div>
+          <blockquote lang="en">«Terrific food and excellent service»</blockquote>
+          <div class="review-by"><span>Finke Peró</span><a href="https://es.restaurantguru.com/PAPILLA-The-Celebration-of-Latin-Flavour-Capriasca" target="_blank" rel="noopener">Google via Restaurant Guru ↗</a></div>
+        </article>
+        <article class="review" data-tags="atmosfera">
+          <div class="review-top"><span class="stars" aria-label="5 stelle su 5">★★★★★</span><span>ATMOSFERA</span></div>
+          <blockquote>«Una serata così fantastica. Il cibo era incredibile.»</blockquote>
+          <div class="review-by"><span>Sonia Ceccato</span><a href="https://corestaurant.ch/it/Switzerland/restaurant/papilla-the-celebration-of-latin-flavour-tesserete-11357" target="_blank" rel="noopener">CoRestaurant ↗</a></div>
+        </article>
+      </div>
+      <p class="review-note">Estratti selezionati da recensioni pubbliche. Le schede linkano alle rispettive fonti.</p>
+    </div>
+  </section>
+  <footer class="footer shell" id="contatti">
+    <div class="footer-main">
+      <div><p class="eyebrow"><span class="dot"></span> OSTERIA PAPILLA</p><h2>Ci vediamo<br>a <em>Tesserete.</em></h2></div>
+      <address><p>Piazza Giuseppe Lepori 1<br>6950 Tesserete, Svizzera</p><a href="tel:+41799220625">+41 79 922 06 25 <span>↗</span></a><a href="https://www.instagram.com/papillatesserete/" target="_blank" rel="noopener">@papillatesserete <span>↗</span></a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Piazza%20Giuseppe%20Lepori%201%2C%206950%20Tesserete" target="_blank" rel="noopener">Indicazioni <span>↗</span></a></address>
+    </div>
+    <div class="footer-meta"><span>PROTOTIPO CREATIVO · IMMAGINI GENERATE E FOTO DAL PROFILO PAPILLA</span><a href="https://www.visitcapriasca.ch/esperienze/osteriapapilla" target="_blank" rel="noopener">Scheda VisitCapriasca ↗</a><a href="#top">Torna su ↑</a></div>
+  </footer>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>
