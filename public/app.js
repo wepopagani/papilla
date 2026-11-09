@@ -266,11 +266,34 @@ document.querySelectorAll("[data-review]").forEach((button) => {
 });
 
 const motionToggle = get("#motion-toggle");
+const ambientVideo = get("#ambient-video");
+let heroInView = true;
+
+function syncAmbientVideo() {
+  if (state.motionPaused || !heroInView || document.hidden) {
+    ambientVideo.pause();
+    return;
+  }
+  if (!ambientVideo.hasAttribute("src")) ambientVideo.src = ambientVideo.dataset.src;
+  ambientVideo.muted = true;
+  ambientVideo.play().catch(() => {});
+}
+ambientVideo.addEventListener("playing", () => ambientVideo.classList.add("is-playing"));
+ambientVideo.addEventListener("error", () => ambientVideo.classList.remove("is-playing"));
+document.addEventListener("visibilitychange", syncAmbientVideo);
+if ("IntersectionObserver" in window) {
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    heroInView = entry.isIntersecting;
+    syncAmbientVideo();
+  });
+  heroObserver.observe(get(".hero"));
+}
 function setPaused(paused) {
   state.motionPaused = paused;
   document.body.classList.toggle("motion-paused", paused);
   motionToggle.setAttribute("aria-pressed", String(paused));
   motionToggle.textContent = paused ? "Riprendi animazioni" : "Pausa animazioni";
+  syncAmbientVideo();
 }
 motionToggle.addEventListener("click", () => setPaused(!state.motionPaused));
 motionPreference.addEventListener("change", (event) => setPaused(event.matches));
