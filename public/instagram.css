@@ -1,0 +1,114 @@
+/* A selected set of Papilla posts, with native scrolling and full post links. */
+.instagram-section {
+  padding-bottom: clamp(65px, 8vw, 125px);
+  min-width: 0;
+}
+.instagram-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 31px;
+}
+.instagram-heading h2 { margin-top: 18px; }
+.instagram-intro { max-width: 340px; }
+.instagram-intro p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #c9d3c3;
+  margin-bottom: 16px;
+}
+.instagram-intro .text-link { color: var(--lime); }
+.instagram-track {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 44px) / 3.2);
+  gap: 22px;
+  list-style: none;
+  padding: 0 0 14px;
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #66865b #123b2f;
+}
+.instagram-track::-webkit-scrollbar { height: 4px; }
+.instagram-track::-webkit-scrollbar-track { background: #123b2f; }
+.instagram-track::-webkit-scrollbar-thumb { background: #66865b; border-radius: 4px; }
+.instagram-track:focus-visible { outline: 2px solid #72bcff; outline-offset: 5px; }
+.instagram-card { min-width: 0; scroll-snap-align: start; }
+.instagram-card-link {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: var(--cream);
+  text-decoration: none;
+  background: #0e3026;
+  border: 1px solid #d9e8c925;
+}
+.instagram-card-link:focus-visible { outline: 3px solid var(--lime); outline-offset: -3px; }
+.instagram-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #123b2f;
+}
+.instagram-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.instagram-card-link:hover .instagram-media img { transform: scale(1.035); }
+.instagram-type {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px;
+  color: var(--cream);
+  background: #071d17db;
+  border: 1px solid #d9e8c940;
+  font-size: 9px;
+  font-weight: 800;
+}
+.instagram-type svg { width: 13px; height: 13px; }
+.instagram-card-caption { display: flex; flex-direction: column; flex: 1; padding: 20px 18px 16px; }
+.instagram-card-kicker { color: var(--gold); font-size: 7px; font-weight: 800; letter-spacing: .14em; }
+.instagram-card-title { display: block; font: 400 clamp(20px, 2.05vw, 30px)/1.12 var(--serif); letter-spacing: -.03em; margin: 11px 0 22px; }
+.instagram-card-action { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #ccddc0; font-size: 10px; font-weight: 700; margin-top: auto; }
+.instagram-card-action .icon { width: 15px; height: 15px; color: var(--lime); }
+.instagram-controls { display: flex; align-items: center; gap: 9px; margin-top: 17px; }
+.instagram-position { margin-right: auto; color: #bfd0b6; font-size: 10px; letter-spacing: .06em; }
+.instagram-arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #d9e8c965; background: transparent; color: var(--cream); }
+.instagram-arrow svg { width: 21px; height: 21px; }
+.instagram-arrow:hover:not(:disabled) { background: var(--lime); color: var(--ink); border-color: var(--lime); }
+.instagram-arrow:disabled { opacity: .3; cursor: default; }
+@media (max-width: 1000px) {
+  .instagram-track { grid-auto-columns: calc((100% - 22px) / 2.3); }
+}
+@media (max-width: 780px) {
+  .instagram-heading { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .instagram-heading h2 { font-size: 54px; }
+  .instagram-intro { max-width: 100%; }
+  .instagram-intro p { margin-bottom: 10px; }
+  .instagram-intro p br { display: none; }
+}
+@media (max-width: 560px) {
+  .instagram-track { grid-auto-columns: 84%; gap: 15px; }
+  .instagram-heading { margin-bottom: 25px; }
+  .instagram-heading h2 { font-size: 46px; }
+  .instagram-card-title { font-size: 27px; }
+  .instagram-card-caption { padding: 19px 16px 15px; }
+  .instagram-card-kicker { font-size: 7px; }
+  .instagram-type { top: 10px; right: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .instagram-media img { transition: none; }
+}
+.motion-paused .instagram-media img { transition: none; }

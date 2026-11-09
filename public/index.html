@@ -9,6 +9,7 @@
 <link rel="preload" href="assets/allura-latin.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/jungle-v2.webp" as="image">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="instagram.css">
 </head>
 <body>
 <a class="skip-link" href="#contenuto">Salta al contenuto</a>
@@ -29,10 +30,17 @@
 <div id="site">
   <header class="header" id="top">
     <a class="brand" href="#top" aria-label="Papilla, torna all’inizio"><span>PAPILLA</span><small>THE CELEBRATION OF LATIN FLAVOUR</small></a>
-    <nav class="desktop-nav" aria-label="Navigazione principale"><a href="#menu">Food & beverage</a><a href="#papilla">Dentro Papilla</a><a href="#recensioni">Dicono di noi</a></nav>
+    <nav class="desktop-nav" aria-label="Navigazione principale"><a href="#menu">Food & beverage</a><a href="#papilla">Dentro Papilla</a><a href="#recensioni">Cosa dicono di noi</a></nav>
     <a class="reserve" href="tel:+41799220625">Prenota un tavolo <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+    <label class="language-control" for="language-select">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="4" ry="9" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.3"/></svg>
+      <span class="sr-only">Lingua del sito</span>
+      <span class="language-current" id="language-current" aria-hidden="true">IT</span>
+      <select id="language-select" aria-label="Lingua del sito"><option value="it">IT · Italiano</option><option value="es">ES · Español</option><option value="fr">FR · Français</option><option value="de">DE · Deutsch</option><option value="en">EN · English</option></select>
+      <span class="language-chevron" aria-hidden="true">⌄</span>
+    </label>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Apri il menu di navigazione"><span></span><span></span></button>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Navigazione mobile" hidden><a href="#menu">Food & beverage</a><a href="#papilla">Dentro Papilla</a><a href="#recensioni">Dicono di noi</a><a href="#contatti">Trovaci a Tesserete</a><a href="tel:+41799220625">Chiama e prenota ↗</a></nav>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Navigazione mobile" hidden><a href="#menu">Food & beverage</a><a href="#papilla">Dentro Papilla</a><a href="#recensioni">Cosa dicono di noi</a><a href="#contatti">Trovaci a Tesserete</a><a href="tel:+41799220625">Chiama e prenota ↗</a></nav>
   </header>
   <main id="contenuto" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
@@ -43,7 +51,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot"></span> QUATTRO CUCINE. UN’ANIMA LATINA.</p>
           <span class="hero-sign" aria-hidden="true">Papilla</span>
-          <h1 id="hero-title">Il tuo<br>lato <em>latino.</em></h1>
+          <h1 id="hero-title">Il tuo<br> lato <em>latino.</em></h1>
           <p class="hero-description">Un sorso tropicale. Un morso di America Latina.<br>La giungla più viva è nel cuore di Tesserete.</p>
           <div class="hero-actions"><a class="button button-lime" href="#menu">Lasciati tentare <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="text-link" href="#papilla">Entra nell’atmosfera <span>↓</span></a></div>
         </div>
@@ -98,6 +106,52 @@
       <div class="atmosphere-copy"><p class="eyebrow"><span class="live-dot"></span> L’ANIMA DI TESSERETE</p><h2 id="atmosphere-title">Qui si brinda.<br>Si condivide.<br><em>Si sta bene.</em></h2><p>Il verde dell’insegna, le foglie sopra la testa, i colori nei piatti. Papilla è il nostro piccolo angolo di America Latina.</p><p>Ci si ritrova per un cocktail, ci si ferma per cena. E nelle serate di musica dal vivo, il ritmo entra anche a tavola.</p><a class="button button-outline" href="https://www.instagram.com/papillatesserete/" target="_blank" rel="noopener">Segui le serate su Instagram <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
     </section>
 
+    <section class="instagram-section wrap" id="instagram" aria-labelledby="instagram-title">
+      <div class="instagram-heading">
+        <div><p class="eyebrow"><span class="live-dot"></span> DAL NOSTRO INSTAGRAM</p><h2 id="instagram-title">Il Papilla,<br><em>dentro il feed.</em></h2></div>
+        <div class="instagram-intro"><p>Cucina, cocktail e momenti da vivere insieme.<br>Una selezione dal nostro profilo.</p><a class="text-link" href="https://www.instagram.com/papillatesserete/" target="_blank" rel="noopener">@papillatesserete <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </div>
+      <ul class="instagram-track" id="instagram-track" role="list" tabindex="0" aria-label="Post Instagram di Papilla">
+        <li class="instagram-card">
+          <a class="instagram-card-link" href="https://www.instagram.com/papillatesserete/reel/DNqwD3ot-3m/" target="_blank" rel="noopener">
+            <span class="instagram-media"><img src="assets/instagram/live.webp" alt="Musicisti si esibiscono tra le piante del Papilla" width="680" height="850" loading="lazy"><span class="instagram-type">Reel <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z" fill="currentColor"/></svg></span></span>
+            <span class="instagram-card-caption"><span class="instagram-card-kicker">IL RITMO DEL PAPILLA</span><span class="instagram-card-title">La serata prende ritmo.</span><span class="instagram-card-action">Guarda il reel <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+          </a>
+        </li>
+        <li class="instagram-card">
+          <a class="instagram-card-link" href="https://www.instagram.com/papillatesserete/p/DGIAoOVNvAe/" target="_blank" rel="noopener">
+            <span class="instagram-media"><img src="assets/instagram/pasta.webp" alt="Un piatto di noodles con gamberi e cipollotto del Papilla" width="680" height="850" loading="lazy"><span class="instagram-type">Post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+            <span class="instagram-card-caption"><span class="instagram-card-kicker">DALLA NOSTRA CUCINA</span><span class="instagram-card-title">Un piatto, mille colori.</span><span class="instagram-card-action">Apri il post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+          </a>
+        </li>
+        <li class="instagram-card">
+          <a class="instagram-card-link" href="https://www.instagram.com/papillatesserete/p/DGIAVUPt6YA/" target="_blank" rel="noopener">
+            <span class="instagram-media"><img src="assets/instagram/dessert.webp" alt="Un dessert a forma di cuore servito su un piatto turchese" width="680" height="850" loading="lazy"><span class="instagram-type">Post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+            <span class="instagram-card-caption"><span class="instagram-card-kicker">IL LATO DOLCE</span><span class="instagram-card-title">Un finale tutto da gustare.</span><span class="instagram-card-action">Apri il post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+          </a>
+        </li>
+        <li class="instagram-card">
+          <a class="instagram-card-link" href="https://www.instagram.com/papillatesserete/p/DGH_8lVN3WP/" target="_blank" rel="noopener">
+            <span class="instagram-media"><img src="assets/instagram/vino.webp" alt="Un membro dello staff serve il vino ai tavoli del Papilla" width="680" height="850" loading="lazy"><span class="instagram-type">Post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+            <span class="instagram-card-caption"><span class="instagram-card-kicker">A TAVOLA INSIEME</span><span class="instagram-card-title">Un calice, in buona compagnia.</span><span class="instagram-card-action">Apri il post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+          </a>
+        </li>
+        <li class="instagram-card">
+          <a class="instagram-card-link" href="https://www.instagram.com/papillatesserete/p/DGH_Isit1wm/" target="_blank" rel="noopener">
+            <span class="instagram-media"><img src="assets/instagram/amiche.webp" alt="Due ospiti sorridono sedute a un tavolo del Papilla" width="680" height="850" loading="lazy"><span class="instagram-type">Post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+            <span class="instagram-card-caption"><span class="instagram-card-kicker">LE VOSTRE SERATE</span><span class="instagram-card-title">Il bello di ritrovarsi.</span><span class="instagram-card-action">Apri il post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+          </a>
+        </li>
+        <li class="instagram-card">
+          <a class="instagram-card-link" href="https://www.instagram.com/papillatesserete/p/DF6J5CyNq-s/" target="_blank" rel="noopener">
+            <span class="instagram-media"><img src="assets/instagram/cocktail.webp" alt="Due cocktail colorati pronti per il brindisi al Papilla" width="680" height="850" loading="lazy"><span class="instagram-type">Post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+            <span class="instagram-card-caption"><span class="instagram-card-kicker">DAL NOSTRO BANCONE</span><span class="instagram-card-title">Il prossimo brindisi.</span><span class="instagram-card-action">Apri il post <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></span></span>
+          </a>
+        </li>
+      </ul>
+      <div class="instagram-controls"><span class="instagram-position" id="instagram-position" role="status" aria-live="polite"></span><button class="instagram-arrow" id="instagram-previous" type="button" aria-label="Post precedenti" aria-controls="instagram-track" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><button class="instagram-arrow" id="instagram-next" type="button" aria-label="Post successivi" aria-controls="instagram-track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+    </section>
+
     <section class="reviews section" id="recensioni" aria-labelledby="reviews-title">
       <div class="wrap"><div class="review-heading"><div><p class="eyebrow"><span class="gold-dot"></span> IL BELLO È RITROVARSI</p><h2 id="reviews-title">Il sapore<br><em>lascia il segno.</em></h2></div><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria%20Papilla%20Piazza%20Giuseppe%20Lepori%201%20Tesserete" target="_blank" rel="noopener">Le recensioni su Maps <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       <div class="review-filters" role="group" aria-label="Filtra le recensioni"><button data-review="all" aria-pressed="true" type="button">Tutte</button><button data-review="cucina" aria-pressed="false" type="button">Cucina</button><button data-review="servizio" aria-pressed="false" type="button">Servizio</button><button data-review="atmosfera" aria-pressed="false" type="button">Atmosfera</button></div>
@@ -105,7 +159,7 @@
         <article class="review-card" data-tags="cucina"><span class="stars" aria-label="5 stelle su 5">★★★★★</span><blockquote>«Deliziosi burritos, ancora più ceviche»</blockquote><div><strong>Nico Agustoni</strong><a href="https://corestaurant.ch/it/Switzerland/restaurant/papilla-the-celebration-of-latin-flavour-tesserete-11357" target="_blank" rel="noopener">CoRestaurant ↗</a></div></article>
         <article class="review-card" data-tags="servizio"><span class="stars" aria-label="5 stelle su 5">★★★★★</span><blockquote lang="en">«Terrific food and excellent service»</blockquote><div><strong>Finke Peró</strong><a href="https://es.restaurantguru.com/PAPILLA-The-Celebration-of-Latin-Flavour-Capriasca" target="_blank" rel="noopener">Google via Restaurant Guru ↗</a></div></article>
         <article class="review-card" data-tags="atmosfera"><span class="stars" aria-label="5 stelle su 5">★★★★★</span><blockquote>«Una serata così fantastica. Il cibo era incredibile.»</blockquote><div><strong>Sonia Ceccato</strong><a href="https://corestaurant.ch/it/Switzerland/restaurant/papilla-the-celebration-of-latin-flavour-tesserete-11357" target="_blank" rel="noopener">CoRestaurant ↗</a></div></article>
-      </div><p class="review-note" id="review-status" aria-live="polite">3 estratti da recensioni pubbliche.</p></div>
+      </div><p class="review-note" id="review-status" aria-live="polite"></p></div>
     </section>
   </main>
   <footer id="contatti">
@@ -116,6 +170,6 @@
 
 <dialog id="item-dialog" aria-labelledby="detail-name"><button class="dialog-close" type="button" aria-label="Chiudi il dettaglio">×</button><p class="eyebrow" id="detail-category"></p><h2 id="detail-name"></h2><p id="detail-description"></p><div class="detail-bottom"><span id="detail-unit"></span><strong id="detail-price"></strong></div><a class="button button-lime" href="tel:+41799220625">Chiedi al Papilla <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></dialog>
 <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" type="button" aria-label="Chiudi i crediti">×</button><p class="eyebrow">PAPILLA TESSERETE</p><h2 id="credits-title">Crediti e immagini</h2><p>Menu e prezzi trascritti dalle carte food e beverage condivise il 9 novembre 2026. I prezzi delle salse non compaiono nelle carte.</p><p>La composizione iniziale di Pisco Sour Maracuyá e Ceviche Mixto e il fondale botanico sono immagini illustrative generate. Il fondale animato è realizzato con Higgsfield. La foto del locale proviene dal profilo Instagram Papilla, fornita come riferimento.</p><p>Gli estratti delle recensioni rimandano alle rispettive fonti. Font Manrope, Anton e Allura, distribuiti con licenza SIL Open Font License.</p></dialog>
-<script src="menu-food.js" defer></script><script src="menu-drinks.js" defer></script><script src="app.js" defer></script>
+<script src="menu-food.js" defer></script><script src="menu-drinks.js" defer></script><script src="menu-food-i18n.js" defer></script><script src="menu-drinks-i18n.js" defer></script><script src="locale.js" defer></script><script src="app.js" defer></script><script src="instagram.js" defer></script>
 </body>
 </html>

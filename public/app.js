@@ -1,6 +1,8 @@
 const food = window.PAPILLA_FOOD || [];
 const drinks = window.PAPILLA_DRINKS || [];
 const allItems = [...food, ...drinks];
+const locale = window.PapillaLocale;
+const t = (source, values) => locale.t(source, values);
 const get = (selector) => document.querySelector(selector);
 const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 const state = { mode: "food", category: "peru", query: "", motionPaused: motionPreference.matches };
@@ -77,8 +79,8 @@ const groupNames = {
   vini: "Vini"
 };
 const formatPrice = (value) => value == null
-  ? "Chiedi al personale"
-  : new Intl.NumberFormat("it-CH", { maximumFractionDigits: 2 }).format(value) + " CHF";
+  ? t("Chiedi al personale")
+  : new Intl.NumberFormat(locale.lang + "-CH", { maximumFractionDigits: 2 }).format(value) + " CHF";
 const normalize = (value) => value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 const currentItems = () => state.mode === "food" ? food : drinks;
 const currentCategories = () => state.mode === "food" ? foodCategories : drinkCategories;
@@ -99,7 +101,7 @@ function renderCategories() {
   currentCategories().forEach(([key, label, groups]) => {
     const count = currentItems().filter((item) => key === "all" || groups.includes(item.category)).length;
     if (!count) return;
-    const button = element("button", "", label);
+    const button = element("button", "", t(label));
     button.type = "button";
     button.dataset.category = key;
     button.setAttribute("aria-pressed", String(state.category === key));
@@ -109,7 +111,7 @@ function renderCategories() {
       get(".menu-toolbar").scrollIntoView({ behavior: state.motionPaused ? "instant" : "smooth" });
     });
     buttons.append(button);
-    const option = element("option", "", label + " (" + count + ")");
+    const option = element("option", "", t(label) + " (" + count + ")");
     option.value = key;
     option.selected = key === state.category;
     select.append(option);
@@ -124,7 +126,9 @@ function renderMenu() {
   const query = normalize(state.query.trim());
   const matches = currentItems().filter((item) => {
     const belongs = state.category === "all" || selected[2].includes(item.category);
-    const text = [item.name, item.description, item.country, item.unit, groupNames[item.category]].join(" ");
+    const translated = locale.translateItem(item, state.mode);
+    const text = [item.name, item.description, translated.name, translated.description,
+      item.country, translated.unit, t(groupNames[item.category])].join(" ");
     return belongs && normalize(text).includes(query);
   });
   const groups = new Map();
@@ -136,10 +140,12 @@ function renderMenu() {
   results.replaceChildren();
   groups.forEach((items, category) => {
     const group = element("details", "menu-group");
+    group.dataset.category = category;
     group.open = state.category !== "all" || Boolean(query);
-    group.append(element("summary", "", groupNames[category] || category));
+    group.append(element("summary", "", t(groupNames[category] || category)));
     const list = element("div", "dish-list");
-    items.forEach((item) => {
+    items.forEach((original) => {
+      const item = locale.translateItem(original, state.mode);
       const article = element("article", "menu-item");
       const top = element("div", "menu-item-top");
       top.append(element("h3", "", item.name));
@@ -155,8 +161,8 @@ function renderMenu() {
     results.append(group);
   });
   get("#menu-empty").hidden = matches.length !== 0;
-  get("#result-count").textContent = matches.length + (matches.length === 1 ? " proposta" : " proposte");
-  get("#menu-location").textContent = selected[1].toUpperCase();
+  get("#result-count").textContent = t(matches.length === 1 ? "menu.count.one" : "menu.count", { count: matches.length });
+  get("#menu-location").textContent = t(selected[1]).toUpperCase();
   renderCategories();
 }
 
@@ -167,15 +173,20 @@ function chooseCategory(category) {
   renderMenu();
 }
 
+function updateMenuLabels() {
+  get("#menu-search").placeholder = t(state.mode === "food"
+    ? "Cerca un piatto o un ingrediente…"
+    : "Cerca un cocktail, un vino, un caffè…");
+  get("#search-label").textContent = t(state.mode === "food"
+    ? "Cerca nella carta food" : "Cerca nella carta beverage");
+}
+
 function chooseMode(mode) {
   state.mode = mode;
   state.category = mode === "food" ? "peru" : "cocktail-latini";
   state.query = "";
   get("#menu-search").value = "";
-  get("#menu-search").placeholder = mode === "food"
-    ? "Cerca un piatto o un ingrediente…"
-    : "Cerca un cocktail, un vino, un caffè…";
-  get("#search-label").textContent = mode === "food" ? "Cerca nella carta food" : "Cerca nella carta beverage";
+  updateMenuLabels();
   document.querySelectorAll("[data-mode]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.mode === mode));
   });
@@ -207,15 +218,21 @@ document.querySelectorAll("[data-country]").forEach((button) => {
 });
 
 const itemDialog = get("#item-dialog");
+let openItem = null;
+function renderItemDetails(original) {
+  const mode = food.includes(original) ? "food" : "drinks";
+  const item = locale.translateItem(original, mode);
+  get("#detail-category").textContent = t(groupNames[item.category]);
+  get("#detail-name").textContent = item.name;
+  get("#detail-description").textContent = item.description || t("Dalla carta beverage di Papilla.");
+  get("#detail-unit").textContent = item.unit || t(item.country.replace("Peru", "Perù"));
+  get("#detail-price").textContent = formatPrice(item.price);
+}
 document.querySelectorAll("[data-item]").forEach((button) => {
   button.addEventListener("click", () => {
-    const item = allItems.find((entry) => entry.id === button.dataset.item);
-    if (!item) return;
-    get("#detail-category").textContent = groupNames[item.category];
-    get("#detail-name").textContent = item.name;
-    get("#detail-description").textContent = item.description || "Dalla carta beverage di Papilla.";
-    get("#detail-unit").textContent = item.unit || item.country.replace("Peru", "Perù");
-    get("#detail-price").textContent = formatPrice(item.price);
+    openItem = allItems.find((entry) => entry.id === button.dataset.item);
+    if (!openItem) return;
+    renderItemDetails(openItem);
     itemDialog.showModal();
   });
 });
@@ -235,13 +252,13 @@ const mobileNavigation = get("#mobile-nav");
 function closeNavigation() {
   mobileNavigation.hidden = true;
   navigationToggle.setAttribute("aria-expanded", "false");
-  navigationToggle.setAttribute("aria-label", "Apri il menu di navigazione");
+  navigationToggle.setAttribute("aria-label", t("Apri il menu di navigazione"));
 }
 navigationToggle.addEventListener("click", () => {
   const expanded = navigationToggle.getAttribute("aria-expanded") !== "true";
   mobileNavigation.hidden = !expanded;
   navigationToggle.setAttribute("aria-expanded", String(expanded));
-  navigationToggle.setAttribute("aria-label", expanded ? "Chiudi il menu di navigazione" : "Apri il menu di navigazione");
+  navigationToggle.setAttribute("aria-label", t(expanded ? "Chiudi il menu di navigazione" : "Apri il menu di navigazione"));
 });
 mobileNavigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNavigation));
 document.addEventListener("keydown", (event) => {
@@ -251,17 +268,19 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+function updateReviewStatus() {
+  const count = [...document.querySelectorAll(".review-card")].filter((card) => !card.hidden).length;
+  get("#review-status").textContent = t(count === 1 ? "review.count.one" : "review.count", { count });
+}
 document.querySelectorAll("[data-review]").forEach((button) => {
   button.addEventListener("click", () => {
-    let count = 0;
     document.querySelectorAll("[data-review]").forEach((entry) => {
       entry.setAttribute("aria-pressed", String(entry === button));
     });
     document.querySelectorAll(".review-card").forEach((card) => {
       card.hidden = button.dataset.review !== "all" && card.dataset.tags !== button.dataset.review;
-      if (!card.hidden) count += 1;
     });
-    get("#review-status").textContent = count + (count === 1 ? " estratto da una recensione pubblica." : " estratti da recensioni pubbliche.");
+    updateReviewStatus();
   });
 });
 
@@ -292,7 +311,7 @@ function setPaused(paused) {
   state.motionPaused = paused;
   document.body.classList.toggle("motion-paused", paused);
   motionToggle.setAttribute("aria-pressed", String(paused));
-  motionToggle.textContent = paused ? "Riprendi animazioni" : "Pausa animazioni";
+  motionToggle.textContent = t(paused ? "Riprendi animazioni" : "Pausa animazioni");
   syncAmbientVideo();
 }
 motionToggle.addEventListener("click", () => setPaused(!state.motionPaused));
@@ -313,7 +332,21 @@ stillLife.addEventListener("pointerleave", () => {
   get(".ceviche").style.translate = "0 0";
 });
 
-renderMenu();
+function updateLocalizedContent() {
+  const expanded = new Map([...document.querySelectorAll(".menu-group")].map((group) => [group.dataset.category, group.open]));
+  renderMenu();
+  document.querySelectorAll(".menu-group").forEach((group) => {
+    if (expanded.has(group.dataset.category)) group.open = expanded.get(group.dataset.category);
+  });
+  updateMenuLabels();
+  updateReviewStatus();
+  navigationToggle.setAttribute("aria-label", t(mobileNavigation.hidden
+    ? "Apri il menu di navigazione" : "Chiudi il menu di navigazione"));
+  motionToggle.textContent = t(state.motionPaused ? "Riprendi animazioni" : "Pausa animazioni");
+  if (itemDialog.open && openItem) renderItemDetails(openItem);
+}
+document.addEventListener("papilla:languagechange", updateLocalizedContent);
+updateLocalizedContent();
 if ("IntersectionObserver" in window && !state.motionPaused) {
   const reveals = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
