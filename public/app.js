@@ -379,7 +379,9 @@ const site = get("#site");
 let entranceTimer;
 let finishTimer;
 let returnFocus;
+let entranceRun = 0;
 function finishEntrance() {
+  entranceRun += 1;
   window.clearTimeout(entranceTimer);
   window.clearTimeout(finishTimer);
   const focusInside = entrance.contains(document.activeElement);
@@ -398,7 +400,7 @@ function openCurtain(immediate = false) {
   }
   if (entrance.classList.contains("opening")) return;
   entrance.classList.add("opening");
-  finishTimer = window.setTimeout(finishEntrance, 1550);
+  finishTimer = window.setTimeout(finishEntrance, 800);
 }
 function positionIntroBird() {
   if (entrance.hidden) return;
@@ -418,6 +420,7 @@ document.fonts?.ready.then(positionIntroBird);
 
 function playEntrance() {
   if (!entrance.hidden) return;
+  const run = ++entranceRun;
   returnFocus = document.activeElement;
   if (!returnFocus || returnFocus === document.body) returnFocus = get("#contenuto");
   entrance.hidden = false;
@@ -425,11 +428,19 @@ function playEntrance() {
   site.inert = true;
   get("#intro-skip").focus({ preventScroll: true });
   positionIntroBird();
-  entrance.classList.add("is-flying");
   if (state.motionPaused) {
     entranceTimer = window.setTimeout(() => openCurtain(true), 400);
   } else {
-    entranceTimer = window.setTimeout(() => openCurtain(), 3900);
+    // Start the short flight after the transparent frames are ready, including a cold first visit.
+    const framesReady = Promise.allSettled([...entrance.querySelectorAll(".intro-bird img")]
+      .map((image) => image.decode ? image.decode() : Promise.resolve()));
+    Promise.race([framesReady, new Promise((resolve) => window.setTimeout(resolve, 800))])
+      .then(() => {
+        if (entrance.hidden || run !== entranceRun) return;
+        positionIntroBird();
+        entrance.classList.add("is-flying");
+        entranceTimer = window.setTimeout(() => openCurtain(), 2050);
+      });
   }
 }
 get("#intro-skip").addEventListener("click", () => openCurtain(true));

@@ -17,6 +17,9 @@
 
 /* The parrot flies in, folds its wings, and lands on the new wordmark. */
 .intro-sign { width: min(900px, 96vw); padding: 10px 20px; }
+.curtain { transition-duration: .75s; }
+.intro-sign { transition: opacity .32s, transform .45s; }
+.intro-glow { transition-duration: .3s; }
 .intro-glow { background: radial-gradient(ellipse, #020c08e8 8%, #03170ec9 45%, #051c1344 75%); }
 .intro-stage { width: 100%; height: clamp(270px, 48svh, 435px); position: relative; margin-top: 14px; }
 .intro-wordmark { position: absolute; left: 0; right: 0; bottom: 7%; z-index: 3; color: var(--neon); font: 400 clamp(65px, 15vw, 180px)/1 var(--serif); letter-spacing: -.04em; text-shadow: 0 0 22px #88e12a4d, 0 0 80px #65d51130; }
@@ -29,17 +32,17 @@
 .intro-perch-glow { position: absolute; left: 58%; bottom: 15%; width: 20%; height: 2px; z-index: 4; opacity: 0; background: #c4ff82; box-shadow: 0 0 24px 7px #a3ed3233; }
 .intro-sign .intro-cuisines { margin-top: -5px; font: 800 clamp(7px, 1.15vw, 12px)/1.8 var(--sans); letter-spacing: .12em; color: #b7e579; }
 .intro-line { margin-top: 24px; }
-.is-flying .intro-bird { animation: parrot-arrival 2.7s cubic-bezier(.24,.65,.3,1) both; }
-.is-flying .parrot-flight-frames { animation: flight-fade 2.7s linear both; }
-.is-flying .parrot-flight-up { animation: wing-up .34s steps(1) 8; }
-.is-flying .parrot-flight-down { animation: wing-down .34s steps(1) 8; }
-.is-flying .parrot-perched { animation: parrot-perch 2.7s linear both; }
+.is-flying .intro-bird { animation: parrot-arrival 1.6s cubic-bezier(.24,.65,.3,1) both; }
+.is-flying .parrot-flight-frames { animation: flight-fade 1.6s linear both; }
+.is-flying .parrot-flight-up { animation: wing-up .22s steps(1) 8; }
+.is-flying .parrot-flight-down { animation: wing-down .22s steps(1) 8; }
+.is-flying .parrot-perched { animation: parrot-perch 1.6s linear both; }
 .is-landed .intro-perch-glow { animation: perch-glow .6s ease-out both; }
 @keyframes parrot-arrival {
-  0% { transform: translate(85vw,-38vh) rotate(-24deg) scale(.6); }
-  32% { transform: translate(29vw,-23vh) rotate(-13deg) scale(.87); }
-  65% { transform: translate(6vw,-11vh) rotate(-8deg) scale(.96); }
-  84% { transform: translate(0,-16px) rotate(4deg) scale(1); }
+  0% { transform: translate(24vw,-8vh) rotate(-18deg) scale(.9); }
+  32% { transform: translate(13vw,-12vh) rotate(-12deg) scale(.94); }
+  65% { transform: translate(4vw,-5vh) rotate(-6deg) scale(.98); }
+  84% { transform: translate(0,-10px) rotate(4deg) scale(1); }
   93% { transform: translate(0,3px) rotate(-2deg); }
   100% { transform: translate(0,0) rotate(0); }
 }
