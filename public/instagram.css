@@ -1,5 +1,6 @@
 /* A selected set of Papilla posts, with native scrolling and full post links. */
 .instagram-section {
+  padding-top: clamp(60px, 6vw, 90px);
   padding-bottom: clamp(65px, 8vw, 125px);
   min-width: 0;
 }

@@ -1462,6 +1462,265 @@
     "fr": "1 litre",
     "de": "1 Liter",
     "en": "1 litre"
+  },
+  "IL PAPILLA, ANCHE A CASA TUA": {
+    "it": "IL PAPILLA, ANCHE A CASA TUA",
+    "es": "PAPILLA, TAMBIÉN EN TU CASA",
+    "fr": "PAPILLA, AUSSI CHEZ VOUS",
+    "de": "PAPILLA, AUCH BEI DIR ZU HAUSE",
+    "en": "PAPILLA, AT HOME TOO"
+  },
+  "La giungla arriva da te.": {
+    "it": "La giungla arriva da te.",
+    "es": "La selva llega a tu casa.",
+    "fr": "La jungle vient à vous.",
+    "de": "Der Dschungel kommt zu dir.",
+    "en": "The jungle comes to you."
+  },
+  "Hai voglia di Papilla? Scegli i tuoi piatti e ordina a domicilio.": {
+    "it": "Hai voglia di Papilla? Scegli i tuoi piatti e ordina a domicilio.",
+    "es": "¿Te apetece Papilla? Elige tus platos y pide a domicilio.",
+    "fr": "Envie de Papilla ? Choisissez vos plats et faites-vous livrer.",
+    "de": "Lust auf Papilla? Wähle deine Gerichte und lass sie dir nach Hause liefern.",
+    "en": "Craving Papilla? Choose your dishes and order delivery."
+  },
+  "Ordina su Divoora": {
+    "it": "Ordina su Divoora",
+    "es": "Pide en Divoora",
+    "fr": "Commandez sur Divoora",
+    "de": "Bei Divoora bestellen",
+    "en": "Order on Divoora"
+  },
+  "Il fiore rosso è una composizione botanica generata dal riferimento del locale.": {
+    "it": "Il fiore rosso è una composizione botanica generata dal riferimento del locale.",
+    "es": "La flor roja es una composición botánica generada a partir de la imagen de referencia del local.",
+    "fr": "La fleur rouge est une composition botanique générée à partir de la référence visuelle du restaurant.",
+    "de": "Die rote Blüte ist eine botanische Bildkomposition, die anhand der Vorlage aus dem Restaurant generiert wurde.",
+    "en": "The red flower is a generated botanical image based on the restaurant’s reference photo."
+  },
+  "Mangià quà!": {
+    "it": "Mangià quà!",
+    "es": "¡Come aquí!",
+    "fr": "Sur place !",
+    "de": "Hier essen!",
+    "en": "Eat here!"
+  },
+  "Chiama e prenota": {
+    "it": "Chiama e prenota",
+    "es": "Llama y reserva",
+    "fr": "Appelez pour réserver",
+    "de": "Anrufen und reservieren",
+    "en": "Call and book"
+  },
+  "Take away": {
+    "it": "Take away",
+    "es": "Para llevar",
+    "fr": "À emporter",
+    "de": "Zum Mitnehmen",
+    "en": "Take away"
+  },
+  "Ordina su WhatsApp": {
+    "it": "Ordina su WhatsApp",
+    "es": "Pide por WhatsApp",
+    "fr": "Commandez sur WhatsApp",
+    "de": "Über WhatsApp bestellen",
+    "en": "Order on WhatsApp"
+  },
+  "CI TROVI A TESSERETE": {
+    "it": "CI TROVI A TESSERETE",
+    "es": "ESTAMOS EN TESSERETE",
+    "fr": "RETROUVEZ-NOUS À TESSERETE",
+    "de": "DU FINDEST UNS IN TESSERETE",
+    "en": "FIND US IN TESSERETE"
+  },
+  "Ci vediamo da Papilla.": {
+    "it": "Ci vediamo da Papilla.",
+    "es": "Nos vemos en Papilla.",
+    "fr": "À bientôt chez Papilla.",
+    "de": "Bis bald bei Papilla.",
+    "en": "See you at Papilla."
+  },
+  "Un pranzo, un aperitivo, una serata insieme.": {
+    "it": "Un pranzo, un aperitivo, una serata insieme.",
+    "es": "Un almuerzo, un aperitivo, una noche juntos.",
+    "fr": "Un déjeuner, un apéritif, une soirée ensemble.",
+    "de": "Ein Mittagessen, ein Aperitif, ein gemeinsamer Abend.",
+    "en": "Lunch, an aperitif, an evening together."
+  },
+  "Gli orari del Papilla": {
+    "it": "Gli orari del Papilla",
+    "es": "El horario de Papilla",
+    "fr": "Les horaires du Papilla",
+    "de": "Öffnungszeiten von Papilla",
+    "en": "Papilla’s opening hours"
+  },
+  "Lunedì": {
+    "it": "Lunedì",
+    "es": "Lunes",
+    "fr": "Lundi",
+    "de": "Montag",
+    "en": "Monday"
+  },
+  "Martedì": {
+    "it": "Martedì",
+    "es": "Martes",
+    "fr": "Mardi",
+    "de": "Dienstag",
+    "en": "Tuesday"
+  },
+  "Mercoledì": {
+    "it": "Mercoledì",
+    "es": "Miércoles",
+    "fr": "Mercredi",
+    "de": "Mittwoch",
+    "en": "Wednesday"
+  },
+  "Giovedì": {
+    "it": "Giovedì",
+    "es": "Jueves",
+    "fr": "Jeudi",
+    "de": "Donnerstag",
+    "en": "Thursday"
+  },
+  "Venerdì": {
+    "it": "Venerdì",
+    "es": "Viernes",
+    "fr": "Vendredi",
+    "de": "Freitag",
+    "en": "Friday"
+  },
+  "Sabato": {
+    "it": "Sabato",
+    "es": "Sábado",
+    "fr": "Samedi",
+    "de": "Samstag",
+    "en": "Saturday"
+  },
+  "Domenica e festivi": {
+    "it": "Domenica e festivi",
+    "es": "Domingos y festivos",
+    "fr": "Dimanches et jours fériés",
+    "de": "Sonntags und an Feiertagen",
+    "en": "Sundays and public holidays"
+  },
+  "Chiuso": {
+    "it": "Chiuso",
+    "es": "Cerrado",
+    "fr": "Fermé",
+    "de": "Geschlossen",
+    "en": "Closed"
+  },
+  "Gli orari possono cambiare in base agli eventi. Per conferma, chiamaci.": {
+    "it": "Gli orari possono cambiare in base agli eventi. Per conferma, chiamaci.",
+    "es": "El horario puede variar según los eventos. Llámanos para confirmarlo.",
+    "fr": "Les horaires peuvent varier selon les événements. Appelez-nous pour les confirmer.",
+    "de": "Die Öffnungszeiten können je nach Veranstaltung abweichen. Ruf uns zur Bestätigung an.",
+    "en": "Opening hours may change for events. Please call us to confirm."
+  },
+  "Chiama il Papilla": {
+    "it": "Chiama il Papilla",
+    "es": "Llama a Papilla",
+    "fr": "Appelez le Papilla",
+    "de": "Papilla anrufen",
+    "en": "Call Papilla"
+  },
+  "Papilla Tesserete · Latin Restaurant": {
+    "it": "Papilla Tesserete · Latin Restaurant",
+    "es": "Papilla Tesserete · Latin Restaurant",
+    "fr": "Papilla Tesserete · Latin Restaurant",
+    "de": "Papilla Tesserete · Latin Restaurant",
+    "en": "Papilla Tesserete · Latin Restaurant"
+  },
+  "Gli orari, a colpo d’occhio.": {
+    "it": "Gli orari, a colpo d’occhio.",
+    "es": "El horario, de un vistazo.",
+    "fr": "Les horaires, en un coup d’œil.",
+    "de": "Die Öffnungszeiten auf einen Blick.",
+    "en": "Opening hours at a glance."
+  },
+  "Una pausa dopo il lavoro.": {
+    "it": "Una pausa dopo il lavoro.",
+    "es": "Una pausa después del trabajo.",
+    "fr": "Une pause après le travail.",
+    "de": "Eine Pause nach der Arbeit.",
+    "en": "A break after work."
+  },
+  "Le occasioni per stare insieme.": {
+    "it": "Le occasioni per stare insieme.",
+    "es": "Ocasiones para estar juntos.",
+    "fr": "Des occasions de se retrouver.",
+    "de": "Anlässe zum Zusammensein.",
+    "en": "Reasons to get together."
+  },
+  "Il tiradito del Papilla.": {
+    "it": "Il tiradito del Papilla.",
+    "es": "El tiradito de Papilla.",
+    "fr": "Le tiradito du Papilla.",
+    "de": "Das Tiradito von Papilla.",
+    "en": "Papilla’s tiradito."
+  },
+  "Lomo saltado, colori peruviani.": {
+    "it": "Lomo saltado, colori peruviani.",
+    "es": "Lomo saltado, colores peruanos.",
+    "fr": "Lomo saltado, couleurs du Pérou.",
+    "de": "Lomo saltado, peruanische Farben.",
+    "en": "Lomo saltado, Peruvian colours."
+  },
+  "La nostra tartare.": {
+    "it": "La nostra tartare.",
+    "es": "Nuestro tartar.",
+    "fr": "Notre tartare.",
+    "de": "Unser Tatar.",
+    "en": "Our tartare."
+  },
+  "Gli orari di apertura pubblicati dal Papilla": {
+    "it": "Gli orari di apertura pubblicati dal Papilla",
+    "es": "El horario de apertura publicado por Papilla",
+    "fr": "Les horaires d’ouverture publiés par le Papilla",
+    "de": "Die von Papilla veröffentlichten Öffnungszeiten",
+    "en": "Opening hours published by Papilla"
+  },
+  "La locandina apero afterwork del Papilla": {
+    "it": "La locandina apero afterwork del Papilla",
+    "es": "El cartel del aperitivo afterwork de Papilla",
+    "fr": "L’affiche de l’apéritif afterwork du Papilla",
+    "de": "Das Plakat zum Afterwork-Aperitif bei Papilla",
+    "en": "Papilla’s afterwork aperitif poster"
+  },
+  "Papilla per cene aziendali, compleanni ed eventi privati": {
+    "it": "Papilla per cene aziendali, compleanni ed eventi privati",
+    "es": "Papilla para cenas de empresa, cumpleaños y eventos privados",
+    "fr": "Le Papilla pour les repas d’entreprise, anniversaires et événements privés",
+    "de": "Papilla für Firmenessen, Geburtstage und private Veranstaltungen",
+    "en": "Papilla for company dinners, birthdays and private events"
+  },
+  "Tiradito con salsa gialla servito su un vassoio ovale": {
+    "it": "Tiradito con salsa gialla servito su un vassoio ovale",
+    "es": "Tiradito con salsa amarilla servido en una bandeja ovalada",
+    "fr": "Tiradito à la sauce jaune servi sur un plat ovale",
+    "de": "Tiradito mit gelber Sauce auf einer ovalen Platte",
+    "en": "Tiradito with yellow sauce served on an oval platter"
+  },
+  "Lomo saltado con riso e patatine": {
+    "it": "Lomo saltado con riso e patatine",
+    "es": "Lomo saltado con arroz y patatas fritas",
+    "fr": "Lomo saltado accompagné de riz et de frites",
+    "de": "Lomo saltado mit Reis und Pommes frites",
+    "en": "Lomo saltado with rice and fries"
+  },
+  "Tartare con tuorlo e pane tostato": {
+    "it": "Tartare con tuorlo e pane tostato",
+    "es": "Tartar con yema de huevo y pan tostado",
+    "fr": "Tartare au jaune d’œuf et pain grillé",
+    "de": "Tatar mit Eigelb und geröstetem Brot",
+    "en": "Tartare with egg yolk and toast"
+  },
+  "Il pappagallo animato è una reinterpretazione illustrativa del nuovo logo Papilla.": {
+    "it": "Il pappagallo animato è una reinterpretazione illustrativa del nuovo logo Papilla.",
+    "es": "El loro animado es una reinterpretación ilustrada del nuevo logotipo de Papilla.",
+    "fr": "Le perroquet animé est une réinterprétation illustrée du nouveau logo Papilla.",
+    "de": "Der animierte Papagei ist eine illustrative Neuinterpretation des neuen Papilla-Logos.",
+    "en": "The animated parrot is an illustrated reinterpretation of the new Papilla logo."
   }
 };
   const supportedLanguages = ["it", "es", "fr", "de", "en"];

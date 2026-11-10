@@ -332,7 +332,21 @@ stillLife.addEventListener("pointerleave", () => {
   get(".ceviche").style.translate = "0 0";
 });
 
+function updateTakeawayLink() {
+  const copy = {
+    it: "Ciao Papilla, vorrei ordinare da asporto. Potete aiutarmi?",
+    es: "Hola Papilla, me gustaría pedir para llevar. ¿Podéis ayudarme?",
+    fr: "Bonjour Papilla, je voudrais commander à emporter. Pouvez-vous m’aider ?",
+    de: "Hallo Papilla, ich möchte etwas zum Mitnehmen bestellen. Könnt ihr mir helfen?",
+    en: "Hi Papilla, I’d like to place a takeaway order. Could you help me?"
+  };
+  document.querySelectorAll(".takeaway-link").forEach((link) => {
+    link.href = "https://wa.me/41799220625?text=" + encodeURIComponent(copy[locale.lang] || copy.it);
+  });
+}
+
 function updateLocalizedContent() {
+  updateTakeawayLink();
   const expanded = new Map([...document.querySelectorAll(".menu-group")].map((group) => [group.dataset.category, group.open]));
   renderMenu();
   document.querySelectorAll(".menu-group").forEach((group) => {
@@ -370,7 +384,7 @@ function finishEntrance() {
   window.clearTimeout(finishTimer);
   const focusInside = entrance.contains(document.activeElement);
   entrance.hidden = true;
-  entrance.classList.remove("opening");
+  entrance.classList.remove("opening", "is-flying", "is-landed");
   site.inert = false;
   document.body.classList.remove("intro-active");
   if (focusInside && returnFocus) returnFocus.focus({ preventScroll: true });
@@ -386,6 +400,22 @@ function openCurtain(immediate = false) {
   entrance.classList.add("opening");
   finishTimer = window.setTimeout(finishEntrance, 1550);
 }
+function positionIntroBird() {
+  if (entrance.hidden) return;
+  const stage = get(".intro-stage").getBoundingClientRect();
+  const wordmark = get(".intro-wordmark").getBoundingClientRect();
+  const bird = get(".intro-bird");
+  bird.style.left = (wordmark.left - stage.left + wordmark.width * .71 - bird.offsetWidth * .40) + "px";
+  bird.style.top = (wordmark.top - stage.top + wordmark.height * .10 - bird.offsetHeight * .72) + "px";
+}
+entrance.addEventListener("animationend", (event) => {
+  if (event.animationName === "parrot-arrival" && !entrance.hidden) {
+    entrance.classList.add("is-landed");
+  }
+});
+window.addEventListener("resize", positionIntroBird);
+document.fonts?.ready.then(positionIntroBird);
+
 function playEntrance() {
   if (!entrance.hidden) return;
   returnFocus = document.activeElement;
@@ -394,10 +424,12 @@ function playEntrance() {
   document.body.classList.add("intro-active");
   site.inert = true;
   get("#intro-skip").focus({ preventScroll: true });
+  positionIntroBird();
+  entrance.classList.add("is-flying");
   if (state.motionPaused) {
     entranceTimer = window.setTimeout(() => openCurtain(true), 400);
   } else {
-    entranceTimer = window.setTimeout(() => openCurtain(), 1600);
+    entranceTimer = window.setTimeout(() => openCurtain(), 3900);
   }
 }
 get("#intro-skip").addEventListener("click", () => openCurtain(true));
@@ -408,5 +440,8 @@ entrance.addEventListener("keydown", (event) => {
     event.preventDefault();
     get("#intro-skip").focus();
   }
+});
+motionPreference.addEventListener("change", (event) => {
+  if (event.matches && !entrance.hidden) finishEntrance();
 });
 if (!state.motionPaused && !window.location.hash) playEntrance();
