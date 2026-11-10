@@ -1,0 +1,19 @@
+PAPILLA TESSERETE - BADGE NFC RECENSIONI
+
+Formato: 54 x 86 mm, verticale.
+PDF: pagina 1 fronte; pagina 2 retro.
+Stampa: dimensioni effettive / 100%, senza adattare o ritagliare.
+Sfondo trasparente, anche sotto il QR. Utilizzare un badge bianco o molto chiaro.
+Nessuna cornice, tacche o segni di taglio.
+Testi in tracciati vettoriali: Manrope 650 per il marchio, 750-800 per il testo.
+Composizione centrata in X e Y su entrambi i lati.
+PNG trasparenti: 600 dpi; SVG in millimetri con testo convertito in tracciati.
+
+Il QR e il file Link-NFC.txt contengono il medesimo indirizzo Google.
+Programmare il chip NFC come record URL con il contenuto di Link-NFC.txt.
+Il disegno stampato non programma il chip.
+
+Destinazione verificata nel modulo Google Scrivi una recensione:
+PAPILLA - The Celebration of Latin Flavour
+Piazza Giuseppe Lepori 1, 6950 Tesserete
+Place ID: ChIJ5W94AYQzhEcRZww0d-vjjos
